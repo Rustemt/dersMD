@@ -13,6 +13,9 @@
 - [x] npm publish (`@dersmd/schema`, `@dersmd/sm2`, `@dersmd/cli`)
 - [x] VS Code eklentisi (`extensions/dersmd-vscode`)
 - [x] Kurs arama + ek LGS / Git içerikleri
+- [x] Kurs REST API + sitemap/robots
+- [x] schema/sm2 birim testleri
+- [x] İlerleme JSON yedek + Markdown kurs export
 
 ## Senin yapman gerekenler (dış hesap)
 

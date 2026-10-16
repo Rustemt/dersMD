@@ -73,7 +73,16 @@ cd extensions/dersmd-vscode && npm i && npm run compile
 
 ```bash
 npm run validate:courses
+npm test
 ```
+
+## HTTP API
+
+- `GET /api/courses`
+- `GET /api/courses/:id`
+- Sınıf quiz: `/api/rooms`
+
+İlerleme yedekleme: `/ilerleme` · kurs Markdown indirme: kurs sayfasında.
 
 ## Lisans
 
