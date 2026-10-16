@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { getCourses } from "@/lib/courses";
 import { EDU_MODULES } from "@/lib/modules";
+import { CourseSearch } from "@/components/course-search";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -64,24 +65,12 @@ export default function HomePage() {
       <section id="kurslar" className="section">
         <header className="section-head">
           <h2>Hazır kurslar</h2>
-          <p>İçerik `content/courses` altında.</p>
+          <p>
+            JSON + Markdown içerik · npm:{" "}
+            <a href="https://www.npmjs.com/package/@dersmd/schema">@dersmd/schema</a>
+          </p>
         </header>
-        <ul className="course-list">
-          {courses.map((course) => (
-            <li key={course.id}>
-              <Link href={`/kurs/${course.id}`} className="course-row">
-                <div>
-                  <p className="course-meta">
-                    {course.level} · {course.minutes} dk · {course.audience}
-                  </p>
-                  <h3>{course.title}</h3>
-                  <p>{course.summary}</p>
-                </div>
-                <span className="course-go">Aç</span>
-              </Link>
-            </li>
-          ))}
-        </ul>
+        <CourseSearch courses={courses} />
       </section>
 
       <section className="section how-section">

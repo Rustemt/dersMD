@@ -10,6 +10,9 @@
 - [x] Sınıf quiz için SQLite kalıcılık (`data/dersmd.sqlite`)
 - [x] CI workflow
 - [x] Türkçe README + katkı / yayın notları
+- [x] npm publish (`@dersmd/schema`, `@dersmd/sm2`, `@dersmd/cli`)
+- [x] VS Code eklentisi (`extensions/dersmd-vscode`)
+- [x] Kurs arama + ek LGS / Git içerikleri
 
 ## Senin yapman gerekenler (dış hesap)
 

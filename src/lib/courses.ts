@@ -4,6 +4,7 @@ import pythonIlkAdim from "../../content/courses/python-ilk-adim.json";
 import ingilizceA1 from "../../content/courses/ingilizce-a1-gunluk.json";
 import htmlTemel from "../../content/courses/html-temel.json";
 import turkceAnlam from "../../content/courses/turkce-anlam.json";
+import denklemlerLgs from "../../content/courses/denklemler-lgs.json";
 import type { Course } from "./course-types";
 import { parseMarkdownCourse } from "./md-course";
 
@@ -26,6 +27,7 @@ const courses: Course[] = [
   ingilizceA1 as Course,
   htmlTemel as Course,
   turkceAnlam as Course,
+  denklemlerLgs as Course,
   ...loadMarkdownCourses(),
 ];
 

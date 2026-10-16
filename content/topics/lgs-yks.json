@@ -9,7 +9,10 @@
       "children": [
         { "id": "oran", "label": "Oran–orantı", "exam": "LGS" },
         { "id": "denklem", "label": "Denklemler", "exam": "LGS+YKS" },
-        { "id": "turev", "label": "Türev", "exam": "YKS" }
+        { "id": "geometri", "label": "Temel geometri", "exam": "LGS" },
+        { "id": "fonksiyon", "label": "Fonksiyonlar", "exam": "YKS" },
+        { "id": "turev", "label": "Türev", "exam": "YKS" },
+        { "id": "integral", "label": "İntegral", "exam": "YKS" }
       ]
     },
     {
@@ -18,7 +21,9 @@
       "exam": "LGS+YKS",
       "children": [
         { "id": "kuvvet", "label": "Kuvvet–hareket", "exam": "LGS" },
+        { "id": "madde", "label": "Madde ve ısı", "exam": "LGS" },
         { "id": "elektrik", "label": "Elektrik", "exam": "LGS+YKS" },
+        { "id": "optik", "label": "Optik", "exam": "YKS" },
         { "id": "dalga", "label": "Dalgalar", "exam": "YKS" }
       ]
     },
@@ -29,7 +34,19 @@
       "children": [
         { "id": "anlam", "label": "Sözcükte anlam", "exam": "LGS" },
         { "id": "paragraf", "label": "Paragraf", "exam": "LGS+YKS" },
-        { "id": "divan", "label": "Divan edebiyatı", "exam": "YKS" }
+        { "id": "dilbilgisi", "label": "Dil bilgisi", "exam": "LGS" },
+        { "id": "divan", "label": "Divan edebiyatı", "exam": "YKS" },
+        { "id": "cumhuriyet", "label": "Cumhuriyet dönemi", "exam": "YKS" }
+      ]
+    },
+    {
+      "id": "sosyal",
+      "label": "Sosyal / Tarih",
+      "exam": "LGS+YKS",
+      "children": [
+        { "id": "inkilap", "label": "İnkılap tarihi", "exam": "LGS" },
+        { "id": "cografya", "label": "Türkiye coğrafyası", "exam": "LGS" },
+        { "id": "osmanli", "label": "Osmanlı", "exam": "YKS" }
       ]
     }
   ]

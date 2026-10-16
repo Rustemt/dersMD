@@ -1,0 +1,11 @@
+{
+  "id": "lgs-mat",
+  "title": "LGS Matematik kartlar",
+  "cards": [
+    { "id": "m1", "front": "Orantı: a/b = c/?", "back": "d (a·d = b·c)" },
+    { "id": "m2", "front": "x + 7 = 20 → x?", "back": "13" },
+    { "id": "m3", "front": "Ters orantı örneği?", "back": "İşçi artınca süre azalır" },
+    { "id": "m4", "front": "2x = 14 → x?", "back": "7" },
+    { "id": "m5", "front": "Yüzde 10'u bulmak?", "back": "Sayıyı 0,1 ile çarp / 10'a böl" }
+  ]
+}

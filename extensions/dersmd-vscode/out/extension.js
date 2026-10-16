@@ -1,0 +1,87 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.activate = activate;
+exports.deactivate = deactivate;
+const vscode = require("vscode");
+function validateCoursePackage(raw) {
+    const errors = [];
+    if (!raw || typeof raw !== "object") {
+        return { ok: false, errors: ["Kök değer bir nesne olmalı."] };
+    }
+    const obj = raw;
+    for (const key of ["id", "title", "level", "summary", "audience"]) {
+        if (typeof obj[key] !== "string" || !obj[key].trim()) {
+            errors.push(`"${key}" dolu bir metin olmalı.`);
+        }
+    }
+    if (typeof obj.minutes !== "number" || obj.minutes <= 0) {
+        errors.push('"minutes" pozitif sayı olmalı.');
+    }
+    if (!Array.isArray(obj.lessons) || obj.lessons.length === 0) {
+        errors.push('"lessons" en az bir ders içermeli.');
+    }
+    else {
+        obj.lessons.forEach((lesson, i) => {
+            if (!lesson || typeof lesson !== "object") {
+                errors.push(`lessons[${i}] nesne olmalı.`);
+                return;
+            }
+            const L = lesson;
+            if (typeof L.id !== "string")
+                errors.push(`lessons[${i}].id eksik.`);
+            if (typeof L.title !== "string")
+                errors.push(`lessons[${i}].title eksik.`);
+            if (!Array.isArray(L.body) || L.body.length === 0) {
+                errors.push(`lessons[${i}].body boş olamaz.`);
+            }
+            const quiz = L.quiz;
+            if (!quiz || typeof quiz !== "object") {
+                errors.push(`lessons[${i}].quiz gerekli.`);
+            }
+            else if (!Array.isArray(quiz.choices) || quiz.choices.length < 2) {
+                errors.push(`lessons[${i}].quiz.choices en az 2 şık olmalı.`);
+            }
+            else if (typeof quiz.answerIndex !== "number" ||
+                quiz.answerIndex < 0 ||
+                quiz.answerIndex >= quiz.choices.length) {
+                errors.push(`lessons[${i}].quiz.answerIndex geçersiz.`);
+            }
+        });
+    }
+    return { ok: errors.length === 0, errors };
+}
+function activate(context) {
+    const diag = vscode.languages.createDiagnosticCollection("dersmd");
+    context.subscriptions.push(diag);
+    const run = () => {
+        const editor = vscode.window.activeTextEditor;
+        if (!editor || editor.document.languageId !== "json") {
+            vscode.window.showWarningMessage("Açık bir JSON dosyası seç.");
+            return;
+        }
+        const text = editor.document.getText();
+        let raw;
+        try {
+            raw = JSON.parse(text);
+        }
+        catch {
+            vscode.window.showErrorMessage("JSON parse hatası.");
+            return;
+        }
+        const result = validateCoursePackage(raw);
+        const uri = editor.document.uri;
+        if (result.ok) {
+            diag.delete(uri);
+            vscode.window.showInformationMessage("DersMD: paket geçerli.");
+            return;
+        }
+        const range = new vscode.Range(0, 0, 0, 1);
+        diag.set(uri, [
+            new vscode.Diagnostic(range, result.errors.join(" | "), vscode.DiagnosticSeverity.Error),
+        ]);
+        vscode.window.showErrorMessage(`DersMD: ${result.errors[0]}`);
+    };
+    context.subscriptions.push(vscode.commands.registerCommand("dersmd.validatePackage", run));
+}
+function deactivate() { }
+//# sourceMappingURL=extension.js.map

@@ -1,0 +1,63 @@
+{
+  "id": "denklemler-lgs",
+  "title": "LGS Matematik: Denklemler",
+  "level": "LGS",
+  "minutes": 22,
+  "summary": "Birinci dereceden denklem kurma ve çözme.",
+  "audience": "8. sınıf",
+  "lessons": [
+    {
+      "id": "denklem-nedir",
+      "title": "Denklem nedir?",
+      "minutes": 7,
+      "body": [
+        "Denklem, bilinmeyeni içeren eşitliktir. Örnek: x + 5 = 12",
+        "Eşitliğin iki yanı her zaman dengede tutulur.",
+        "Amaç, bilinmeyeni yalnız bırakmaktır."
+      ],
+      "quiz": {
+        "prompt": "x - 3 = 7 ise x kaçtır?",
+        "choices": ["4", "10", "21", "-4"],
+        "answerIndex": 1,
+        "explain": "Her iki tarafa 3 ekle: x = 10."
+      }
+    },
+    {
+      "id": "islem",
+      "title": "İşlem koruma",
+      "minutes": 7,
+      "body": [
+        "Eşitliğin iki yanına aynı sayıyı ekleyebilir, çıkarabilir, çarpabilir veya bölebilirsin.",
+        "2x = 10 → her iki yanı 2'ye böl → x = 5",
+        "İşlemi iki yana da uygula; denge bozulmasın."
+      ],
+      "quiz": {
+        "prompt": "3x = 18 için doğru adım hangisi?",
+        "choices": [
+          "Sadece sola 3 ekle",
+          "Her iki yanı 3'e böl",
+          "Sadece sağdan 3 çıkar",
+          "x'i yok say"
+        ],
+        "answerIndex": 1,
+        "explain": "Her iki yanı 3'e bölünce x = 6 bulunur."
+      }
+    },
+    {
+      "id": "problem",
+      "title": "Probleme çevirme",
+      "minutes": 8,
+      "body": [
+        "\"Bir sayının 4 fazlası 19\" → x + 4 = 19",
+        "Önce bilinmeyeni seç, sonra cümleyi matematiksel yaz.",
+        "Sonucu probleme geri koyup kontrol et."
+      ],
+      "quiz": {
+        "prompt": "\"Bir sayının 3 eksiği 11\" denklemi?",
+        "choices": ["x + 3 = 11", "3 - x = 11", "x - 3 = 11", "3x = 11"],
+        "answerIndex": 2,
+        "explain": "x - 3 = 11 → x = 14."
+      }
+    }
+  ]
+}

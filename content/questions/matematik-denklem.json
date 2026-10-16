@@ -1,0 +1,28 @@
+{
+  "id": "matematik-denklem",
+  "title": "Denklemler (LGS)",
+  "topic": "Matematik",
+  "questions": [
+    {
+      "id": "d1",
+      "prompt": "2x + 4 = 12 ise x?",
+      "choices": ["2", "4", "6", "8"],
+      "answerIndex": 1,
+      "explain": "2x = 8 → x = 4"
+    },
+    {
+      "id": "d2",
+      "prompt": "x/3 = 5 ise x?",
+      "choices": ["8", "15", "2", "3"],
+      "answerIndex": 1,
+      "explain": "Her iki yanı 3 ile çarp: x = 15"
+    },
+    {
+      "id": "d3",
+      "prompt": "5x - 5 = 0 ise x?",
+      "choices": ["0", "1", "5", "-1"],
+      "answerIndex": 1,
+      "explain": "5x = 5 → x = 1"
+    }
+  ]
+}

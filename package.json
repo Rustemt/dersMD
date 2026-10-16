@@ -15,7 +15,7 @@
     "build:packages": "npm run build -w @dersmd/schema && npm run build -w @dersmd/sm2 && npm run build -w @dersmd/cli",
     "start": "next start --hostname 0.0.0.0 --port 43127",
     "lint": "eslint",
-    "validate:courses": "node packages/cli/dist/cli.js content/courses/python-ilk-adim.json"
+    "validate:courses": "npm run build -w @dersmd/schema && node scripts/validate-all.mjs"
   },
   "dependencies": {
     "@base-ui/react": "^1.9.0",
