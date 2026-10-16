@@ -1,0 +1,68 @@
+{
+  "id": "python-ilk-adim",
+  "title": "Python'a İlk Adım",
+  "level": "Başlangıç",
+  "minutes": 25,
+  "summary": "Değişken, tip ve koşullu ifadelerle programlamaya güvenli bir giriş.",
+  "audience": "Lise ve üniversite öğrencileri",
+  "lessons": [
+    {
+      "id": "degiskenler",
+      "title": "Değişkenler nedir?",
+      "minutes": 8,
+      "body": [
+        "Bir değişken, bilgisayarın bellekte tuttuğu bir değere verdiğin isimdir.",
+        "Python'da isim = değer şeklinde yazarsın. Örneğin: yas = 16",
+        "İsimler anlamlı olsun: x yerine ogrenci_sayisi kullanmak okumayı kolaylaştırır."
+      ],
+      "quiz": {
+        "prompt": "Aşağıdakilerden hangisi geçerli bir Python değişken atamasıdır?",
+        "choices": [
+          "16 = yas",
+          "yas = 16",
+          "yas == 16",
+          "let yas = 16"
+        ],
+        "answerIndex": 1,
+        "explain": "Python'da atama tek eşittir (=) ile yapılır. == karşılaştırma içindir."
+      }
+    },
+    {
+      "id": "tipler",
+      "title": "Temel veri tipleri",
+      "minutes": 8,
+      "body": [
+        "Sık kullanılan tipler: int (tam sayı), float (ondalık), str (metin), bool (True/False).",
+        "type(3) → int, type(3.14) → float, type(\"merhaba\") → str.",
+        "Metinleri tırnak içinde yazarsın: \"DersMD\" veya 'DersMD'."
+      ],
+      "quiz": {
+        "prompt": "type(3.0) ne döner?",
+        "choices": ["int", "float", "str", "bool"],
+        "answerIndex": 1,
+        "explain": "3.0 ondalıklı yazıldığı için float'tır; 3 ise int olur."
+      }
+    },
+    {
+      "id": "kosullar",
+      "title": "if ile karar vermek",
+      "minutes": 9,
+      "body": [
+        "Programlar çoğu zaman bir koşula göre farklı yol izler.",
+        "if puan >= 50: print(\"Geçti\") else: print(\"Kaldı\")",
+        "Koşul True ise if bloğu, False ise else bloğu çalışır."
+      ],
+      "quiz": {
+        "prompt": "puan = 72 iken if puan >= 50 ne yapar?",
+        "choices": [
+          "else bloğunu çalıştırır",
+          "hiçbir şey yapmaz",
+          "if bloğunu çalıştırır",
+          "hata verir"
+        ],
+        "answerIndex": 2,
+        "explain": "72 >= 50 doğru (True) olduğu için if bloğu çalışır."
+      }
+    }
+  ]
+}

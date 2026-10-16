@@ -1,0 +1,73 @@
+{
+  "id": "ingilizce-a1-gunluk",
+  "title": "İngilizce A1: Günlük İfadeler",
+  "level": "A1",
+  "minutes": 20,
+  "summary": "Selamlaşma, kendini tanıtma ve basit sorularla günlük konuşma temeli.",
+  "audience": "Yeni başlayanlar",
+  "lessons": [
+    {
+      "id": "selamlasma",
+      "title": "Selamlaşma",
+      "minutes": 6,
+      "body": [
+        "Hello / Hi — merhaba. Good morning — günaydın.",
+        "How are you? — Nasılsın? Cevap: I'm fine, thanks.",
+        "Goodbye / See you — hoşça kal / görüşürüz."
+      ],
+      "quiz": {
+        "prompt": "\"Nasılsın?\" İngilizcede nasıl sorulur?",
+        "choices": [
+          "Who are you?",
+          "How are you?",
+          "Where are you?",
+          "What are you?"
+        ],
+        "answerIndex": 1,
+        "explain": "How are you? standart nezaket sorusudur."
+      }
+    },
+    {
+      "id": "tanisma",
+      "title": "Kendini tanıtma",
+      "minutes": 7,
+      "body": [
+        "My name is Ayşe. / I'm Ayşe.",
+        "I am a student. — Ben bir öğrenciyim.",
+        "Nice to meet you. — Tanıştığımıza memnun oldum."
+      ],
+      "quiz": {
+        "prompt": "\"Ben bir öğrenciyim\" için doğru seçenek hangisi?",
+        "choices": [
+          "I student.",
+          "I am a student.",
+          "I am student a.",
+          "Me student."
+        ],
+        "answerIndex": 1,
+        "explain": "I am a student. (veya I'm a student.) doğru yapıdır."
+      }
+    },
+    {
+      "id": "basit-sorular",
+      "title": "Basit sorular",
+      "minutes": 7,
+      "body": [
+        "What is this? — Bu nedir?",
+        "Where do you live? — Nerede yaşıyorsun?",
+        "Do you like tea? — Çay sever misin? Yes, I do. / No, I don't."
+      ],
+      "quiz": {
+        "prompt": "\"Nerede yaşıyorsun?\" doğru çevirisi nedir?",
+        "choices": [
+          "What do you live?",
+          "Where do you live?",
+          "When do you live?",
+          "Why do you live?"
+        ],
+        "answerIndex": 1,
+        "explain": "Where = nerede. Where do you live?"
+      }
+    }
+  ]
+}
