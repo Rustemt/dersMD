@@ -26,3 +26,29 @@
 ```
 
 `answerIndex` 0 tabanlıdır (ilk şık = 0).
+
+## Markdown kurs (`content/courses-md/*.md`)
+
+```md
+---
+id: ornek
+title: Örnek
+level: Başlangıç
+minutes: 10
+summary: Kısa özet
+audience: Herkes
+---
+
+## Ders: ilk-ders
+minutes: 5
+
+Paragraf bir.
+Paragraf iki.
+
+### Quiz
+Soru: 2+2?
+- [ ] 3
+- [x] 4
+- [ ] 5
+Açıklama: 4 doğru.
+```
