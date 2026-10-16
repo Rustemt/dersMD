@@ -44,3 +44,5 @@ next-env.d.ts
 /data/*.sqlite
 /data/*.sqlite-*
 packages/*/dist
+extensions/*/node_modules
+extensions/*/out
