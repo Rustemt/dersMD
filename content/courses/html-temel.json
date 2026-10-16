@@ -1,0 +1,58 @@
+{
+  "id": "html-temel",
+  "title": "HTML'e İlk Adım",
+  "level": "Başlangıç",
+  "minutes": 20,
+  "summary": "Etiket, başlık ve bağlantı ile basit bir sayfa iskeleti.",
+  "audience": "Kod öğrenenler",
+  "lessons": [
+    {
+      "id": "etiket",
+      "title": "Etiket nedir?",
+      "minutes": 6,
+      "body": [
+        "HTML, sayfadaki içeriği etiketlerle işaretler.",
+        "Örnek: <p>Bu bir paragraftır.</p>",
+        "Çoğu etiket açılış ve kapanış çiftiyle gelir."
+      ],
+      "quiz": {
+        "prompt": "Paragraf için doğru etiket hangisi?",
+        "choices": ["<para>", "<p>", "<text>", "<br>"],
+        "answerIndex": 1,
+        "explain": "<p> paragraf demektir."
+      }
+    },
+    {
+      "id": "baslik",
+      "title": "Başlıklar",
+      "minutes": 7,
+      "body": [
+        "h1 en büyük, h6 en küçük başlıktır.",
+        "Sayfada genelde tek bir h1 bulunur.",
+        "Başlıklar hem görsel hem erişilebilirlik için önemlidir."
+      ],
+      "quiz": {
+        "prompt": "En önemli sayfa başlığı hangisidir?",
+        "choices": ["<h6>", "<h3>", "<h1>", "<title-only>"],
+        "answerIndex": 2,
+        "explain": "<h1> ana başlıktır."
+      }
+    },
+    {
+      "id": "baglanti",
+      "title": "Bağlantılar",
+      "minutes": 7,
+      "body": [
+        "a etiketi bağlantı oluşturur: <a href=\"https://example.com\">Tıkla</a>",
+        "href hedef adresi tutar.",
+        "Açıklayıcı bağlantı metni kullan (\"tıklayın\" yerine konu yaz)."
+      ],
+      "quiz": {
+        "prompt": "Bağlantı adresini hangi özellik tutar?",
+        "choices": ["src", "href", "link", "url"],
+        "answerIndex": 1,
+        "explain": "href = hypertext reference."
+      }
+    }
+  ]
+}

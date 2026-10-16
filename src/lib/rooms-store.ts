@@ -1,3 +1,5 @@
+import { getDb } from "./db";
+
 export type RoomQuestion = {
   prompt: string;
   choices: string[];
@@ -14,15 +16,16 @@ export type Room = {
   createdAt: number;
 };
 
-const g = globalThis as unknown as { __dersmdRooms?: Map<string, Room> };
-
-function store() {
-  if (!g.__dersmdRooms) g.__dersmdRooms = new Map();
-  return g.__dersmdRooms;
-}
-
 function code() {
   return Math.random().toString(36).slice(2, 8).toUpperCase();
+}
+
+function save(room: Room) {
+  const db = getDb();
+  db.prepare(
+    `INSERT INTO rooms (code, payload, updated_at) VALUES (?, ?, ?)
+     ON CONFLICT(code) DO UPDATE SET payload = excluded.payload, updated_at = excluded.updated_at`,
+  ).run(room.code, JSON.stringify(room), Date.now());
 }
 
 export function createRoom(title: string, questions: RoomQuestion[]): Room {
@@ -35,12 +38,16 @@ export function createRoom(title: string, questions: RoomQuestion[]): Room {
     students: {},
     createdAt: Date.now(),
   };
-  store().set(room.code, room);
+  save(room);
   return room;
 }
 
-export function getRoom(c: string) {
-  return store().get(c.toUpperCase());
+export function getRoom(c: string): Room | undefined {
+  const row = getDb()
+    .prepare(`SELECT payload FROM rooms WHERE code = ?`)
+    .get(c.toUpperCase()) as { payload: string } | undefined;
+  if (!row) return undefined;
+  return JSON.parse(row.payload) as Room;
 }
 
 export function joinRoom(c: string, name: string) {
@@ -48,17 +55,15 @@ export function joinRoom(c: string, name: string) {
   if (!room) return null;
   const id = `${name}-${Math.random().toString(36).slice(2, 6)}`;
   room.students[id] = { name, answers: {} };
+  save(room);
   return { room, studentId: id };
 }
 
-export function answerRoom(
-  c: string,
-  studentId: string,
-  choiceIndex: number,
-) {
+export function answerRoom(c: string, studentId: string, choiceIndex: number) {
   const room = getRoom(c);
   if (!room || !room.students[studentId]) return null;
   room.students[studentId].answers[room.index] = choiceIndex;
+  save(room);
   return room;
 }
 
@@ -67,6 +72,7 @@ export function nextQuestion(c: string) {
   if (!room) return null;
   room.revealed = false;
   if (room.index < room.questions.length - 1) room.index += 1;
+  save(room);
   return room;
 }
 
@@ -74,6 +80,7 @@ export function revealRoom(c: string) {
   const room = getRoom(c);
   if (!room) return null;
   room.revealed = true;
+  save(room);
   return room;
 }
 

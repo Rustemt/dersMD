@@ -1,10 +1,32 @@
+import { readFileSync, readdirSync } from "node:fs";
+import { join } from "node:path";
 import pythonIlkAdim from "../../content/courses/python-ilk-adim.json";
 import ingilizceA1 from "../../content/courses/ingilizce-a1-gunluk.json";
+import htmlTemel from "../../content/courses/html-temel.json";
+import turkceAnlam from "../../content/courses/turkce-anlam.json";
 import type { Course } from "./course-types";
+import { parseMarkdownCourse } from "./md-course";
+
+function loadMarkdownCourses(): Course[] {
+  const dir = join(process.cwd(), "content/courses-md");
+  try {
+    return readdirSync(dir)
+      .filter((f) => f.endsWith(".md"))
+      .map((f) => {
+        const raw = readFileSync(join(dir, f), "utf8");
+        return parseMarkdownCourse(raw);
+      });
+  } catch {
+    return [];
+  }
+}
 
 const courses: Course[] = [
   pythonIlkAdim as Course,
   ingilizceA1 as Course,
+  htmlTemel as Course,
+  turkceAnlam as Course,
+  ...loadMarkdownCourses(),
 ];
 
 export function getCourses(): Course[] {

@@ -1,0 +1,11 @@
+{
+  "id": "ingilizce-a1",
+  "title": "İngilizce A1 kartlar",
+  "cards": [
+    { "id": "e1", "front": "Merhaba", "back": "Hello / Hi" },
+    { "id": "e2", "front": "Teşekkürler", "back": "Thank you / Thanks" },
+    { "id": "e3", "front": "Nasılsın?", "back": "How are you?" },
+    { "id": "e4", "front": "Ben bir öğrenciyim", "back": "I am a student" },
+    { "id": "e5", "front": "Görüşürüz", "back": "See you" }
+  ]
+}

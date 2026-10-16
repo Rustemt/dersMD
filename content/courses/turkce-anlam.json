@@ -1,0 +1,58 @@
+{
+  "id": "turkce-anlam",
+  "title": "Türkçe: Sözcükte Anlam",
+  "level": "LGS",
+  "minutes": 18,
+  "summary": "Gerçek, mecaz ve terim anlamı ayırt etme pratikleri.",
+  "audience": "8. sınıf",
+  "lessons": [
+    {
+      "id": "gercek",
+      "title": "Gerçek anlam",
+      "minutes": 6,
+      "body": [
+        "Gerçek anlam, sözcüğün akla ilk gelen temel anlamıdır.",
+        "Örnek: \"Kapıyı açtı.\" — açmak eylemi somut.",
+        "Sözlükteki birinci anlam çoğu zaman gerçek anlamdır."
+      ],
+      "quiz": {
+        "prompt": "\"Kitabı raftan aldı.\" cümlesinde almak hangi anlamda?",
+        "choices": ["Mecaz", "Gerçek", "Terim", "Yan anlam yok"],
+        "answerIndex": 1,
+        "explain": "Somut bir nesneyi eline almak — gerçek anlam."
+      }
+    },
+    {
+      "id": "mecaz",
+      "title": "Mecaz anlam",
+      "minutes": 6,
+      "body": [
+        "Mecaz, sözcüğün gerçek anlamının dışında, benzerlikle kullanılmasıdır.",
+        "Örnek: \"İçi yanmak\" — üzüntü.",
+        "Bağlam mecazı anlamamıza yardım eder."
+      ],
+      "quiz": {
+        "prompt": "\"Sınıfta buz gibi bir hava vardı.\" — buz gibi?",
+        "choices": ["Gerçek soğukluk her zaman", "Mecaz (gergin/soğuk ortam)", "Terim anlam", "Kısaltma"],
+        "answerIndex": 1,
+        "explain": "Ortamın gerginliğini anlatan mecaz kullanımdır."
+      }
+    },
+    {
+      "id": "terim",
+      "title": "Terim anlam",
+      "minutes": 6,
+      "body": [
+        "Terim, bir bilim veya sanat dalına özgü anlamdır.",
+        "Örnek: matematikte \"kök\", litürjide değil cebirde.",
+        "Terimler alan sözlüklerinde netleşir."
+      ],
+      "quiz": {
+        "prompt": "Matematikte \"açı\" sözcüğü hangi anlam türüne girer?",
+        "choices": ["Yalnız mecaz", "Terim", "Ünlem", "Edat"],
+        "answerIndex": 1,
+        "explain": "Geometri alanına özgü kullanımı terimdir."
+      }
+    }
+  ]
+}

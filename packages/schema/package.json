@@ -1,0 +1,29 @@
+{
+  "name": "@dersmd/schema",
+  "version": "0.1.0",
+  "description": "DersMD ders paketi (ders.json) şema doğrulayıcı",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": ["dist", "README.md"],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {
+    "typescript": "^5"
+  },
+  "keywords": ["education", "dersmd", "schema", "json", "turkey"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Rustemt/dersMD.git",
+    "directory": "packages/schema"
+  }
+}

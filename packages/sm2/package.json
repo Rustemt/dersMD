@@ -1,0 +1,29 @@
+{
+  "name": "@dersmd/sm2",
+  "version": "0.1.0",
+  "description": "Minimal SM-2 spaced repetition helpers for DersMD",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": ["dist", "README.md"],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {
+    "typescript": "^5"
+  },
+  "keywords": ["spaced-repetition", "sm2", "flashcards", "dersmd", "education"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Rustemt/dersMD.git",
+    "directory": "packages/sm2"
+  }
+}

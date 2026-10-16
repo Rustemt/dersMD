@@ -1,0 +1,31 @@
+{
+  "id": "turkce-paragraf",
+  "title": "Paragraf (LGS)",
+  "topic": "Türkçe",
+  "questions": [
+    {
+      "id": "t1",
+      "prompt": "Bir paragrafın ana düşüncesi genelde nerede aranır?",
+      "choices": [
+        "Sadece son cümlede her zaman",
+        "Konuyu toplayan cümlede (sıklıkla giriş/sonuç)",
+        "Noktalama işaretlerinde",
+        "Yazarın adında"
+      ],
+      "answerIndex": 1,
+      "explain": "Ana düşünce paragrafı özetleyen cümlededir."
+    },
+    {
+      "id": "t2",
+      "prompt": "Yardımcı düşünce ne işe yarar?",
+      "choices": [
+        "Ana düşünceyi destekler",
+        "Noktalama ekler",
+        "Başlığı değiştirir",
+        "Paragrafı siler"
+      ],
+      "answerIndex": 0,
+      "explain": "Yardımcı düşünceler ana düşünceyi açar ve destekler."
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": "fen-kuvvet",
+  "title": "Kuvvet ve hareket (LGS)",
+  "topic": "Fen",
+  "questions": [
+    {
+      "id": "f1",
+      "prompt": "Net kuvvet sıfırsa cisim nasıl hareket eder?",
+      "choices": [
+        "Mutlaka hızlanır",
+        "Duruyor veya sabit hızlıdır",
+        "Yönü sürekli değişir",
+        "Kütlesi artar"
+      ],
+      "answerIndex": 1,
+      "explain": "Dengelenmiş kuvvet: durma veya sabit hız."
+    },
+    {
+      "id": "f2",
+      "prompt": "Sürtünme kuvveti genelde ne yapar?",
+      "choices": [
+        "Hareketi kolaylaştırır her zaman",
+        "Temas eden yüzeylerde harekete karşı koyar",
+        "Kütleyi azaltır",
+        "Sıcaklığı yok eder"
+      ],
+      "answerIndex": 1,
+      "explain": "Sürtünme, temas halinde harekete zıt yönde etki eder."
+    }
+  ]
+}

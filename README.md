@@ -1,22 +1,24 @@
 # DersMD
 
-Açık kaynak **eğitim araç seti** (MIT). JSON içerik + Next.js arayüz.
+Açık kaynak **eğitim araç seti** (MIT) — [github.com/Rustemt/dersMD](https://github.com/Rustemt/dersMD)
 
-## Modüller
+JSON / Markdown müfredat, quiz, tekrar motoru, canlı sınıf, ödev, rubrik ve daha fazlası.
 
-| Modül | Rota | Ne işe yarar |
-| --- | --- | --- |
-| Ders player | `/kurs/...` | JSON müfredat + quiz |
-| Tekrar motoru | `/tekrar` | Flashcard + SM-2 lite |
-| Soru bankası | `/soru-bankasi` | Yanlışları tekrar kuyruğu |
-| Pomodoro + hedef | `/pomodoro` | Zamanlayıcı, hedef, streak |
-| Sesli okuma / dikte | `/dikte` | Dinle–yaz (Web Speech) |
-| Sınıf quiz | `/sinif-quiz` | Oda kodu ile canlı quiz |
-| Ödev toplayıcı | `/odev` | Teslim + kontrol listesi |
-| Rubrik puanlayıcı | `/rubrik` | Kriter notu + yazdır |
-| LGS–YKS haritası | `/konu-haritasi` | Konu ağacı |
-| Markdown defter | `/defter` | MD → HTML önizleme |
-| Açık ders paketi | `/paket` | `ders.json` doğrulayıcı |
+## Hızlı bakış
+
+| Modül | Rota |
+| --- | --- |
+| Ders player | `/kurs/...` |
+| Tekrar (SM-2) | `/tekrar` |
+| Soru bankası | `/soru-bankasi` |
+| Pomodoro | `/pomodoro` |
+| Dikte | `/dikte` |
+| Sınıf quiz (SQLite) | `/sinif-quiz` |
+| Ödev | `/odev` |
+| Rubrik | `/rubrik` |
+| LGS–YKS haritası | `/konu-haritasi` |
+| Markdown defter | `/defter` |
+| Paket doğrulayıcı | `/paket` |
 
 ## Kurulum
 
@@ -25,28 +27,38 @@ npm install
 npm run dev
 ```
 
-Varsayılan adres: [http://127.0.0.1:43127](http://127.0.0.1:43127)
+Adres: http://127.0.0.1:43127
 
-## İçerik ekleme
+## İçerik
 
-- Kurslar: `content/courses/*.json` → `src/lib/courses.ts` import
+- JSON kurslar: `content/courses/`
+- **Markdown kurslar:** `content/courses-md/` (ör. `css-kutu.md`)
 - Kartlar: `content/flashcards/`
 - Sorular: `content/questions/`
-- Konu haritası: `content/topics/`
 - Şema: `content/SCHEMA.md`
 
-## GitHub’a yükleme
+## Paketler
 
-1. GitHub’da yeni boş repo oluştur (README ekleme).
-2. Yerelde:
+| Paket | Görev |
+| --- | --- |
+| `@dersmd/schema` | `ders.json` doğrula |
+| `@dersmd/sm2` | Spaced repetition |
+| `@dersmd/cli` | `npx` ile validate |
+
+Yayın adımları: `docs/NPM_PUBLISH.md`
 
 ```bash
-git remote add github https://github.com/KULLANICI/REPO.git
-git push -u github main
+npm run build:packages
+node packages/cli/dist/cli.js content/courses/python-ilk-adim.json
 ```
 
-Cursor’da **Create repo** ile de bağlayabilirsin; ardından aynı `main` dalını GitHub’a push et.
+## Katkı / OSS
+
+- `CONTRIBUTING.md`
+- Yol haritası: `docs/OSS_ROADMAP.md`
+- Yazı taslağı: `docs/DEVTO_DRAFT.md`
+- Topics: `docs/GITHUB_TOPICS.md`
 
 ## Lisans
 
-MIT — ayrıntı `LICENSE`.
+MIT

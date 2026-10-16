@@ -1,8 +1,9 @@
-import deck from "../../content/flashcards/python-temel.json";
+import python from "../../content/flashcards/python-temel.json";
+import english from "../../content/flashcards/ingilizce-a1.json";
 
 export type Flashcard = { id: string; front: string; back: string };
 export type Deck = { id: string; title: string; cards: Flashcard[] };
 
 export function getDecks(): Deck[] {
-  return [deck as Deck];
+  return [python as Deck, english as Deck];
 }

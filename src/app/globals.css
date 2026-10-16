@@ -646,6 +646,7 @@
 
 .field input,
 .field textarea,
+.field select,
 .rubrik-row input {
   width: 100%;
   border: 1px solid var(--border);

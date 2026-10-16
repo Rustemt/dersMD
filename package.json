@@ -1,17 +1,26 @@
 {
   "name": "dersmd",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "description": "Açık kaynak eğitim araç seti: ders, tekrar, soru bankası, pomodoro, dikte, sınıf quiz, ödev, rubrik, konu haritası, defter, paket doğrulayıcı",
   "license": "MIT",
+  "workspaces": [
+    "packages/schema",
+    "packages/sm2",
+    "packages/cli"
+  ],
   "scripts": {
     "dev": "next dev --hostname 0.0.0.0 --port 43127",
-    "build": "next build",
+    "build": "npm run build:packages && next build",
+    "build:packages": "npm run build -w @dersmd/schema && npm run build -w @dersmd/sm2 && npm run build -w @dersmd/cli",
     "start": "next start --hostname 0.0.0.0 --port 43127",
-    "lint": "eslint"
+    "lint": "eslint",
+    "validate:courses": "node packages/cli/dist/cli.js content/courses/python-ilk-adim.json"
   },
   "dependencies": {
     "@base-ui/react": "^1.9.0",
+    "@dersmd/schema": "0.1.0",
+    "@dersmd/sm2": "0.1.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^1.58.0",
@@ -25,7 +34,6 @@
   },
   "devDependencies": {
     "@tailwindcss/turbopack": "^4",
-    "@types/marked": "^5.0.2",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
