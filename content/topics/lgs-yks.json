@@ -1,0 +1,36 @@
+{
+  "id": "lgs-yks",
+  "title": "LGS → YKS konu haritası",
+  "nodes": [
+    {
+      "id": "mat",
+      "label": "Matematik",
+      "exam": "LGS+YKS",
+      "children": [
+        { "id": "oran", "label": "Oran–orantı", "exam": "LGS" },
+        { "id": "denklem", "label": "Denklemler", "exam": "LGS+YKS" },
+        { "id": "turev", "label": "Türev", "exam": "YKS" }
+      ]
+    },
+    {
+      "id": "fen",
+      "label": "Fen / Fizik",
+      "exam": "LGS+YKS",
+      "children": [
+        { "id": "kuvvet", "label": "Kuvvet–hareket", "exam": "LGS" },
+        { "id": "elektrik", "label": "Elektrik", "exam": "LGS+YKS" },
+        { "id": "dalga", "label": "Dalgalar", "exam": "YKS" }
+      ]
+    },
+    {
+      "id": "turkce",
+      "label": "Türkçe / Edebiyat",
+      "exam": "LGS+YKS",
+      "children": [
+        { "id": "anlam", "label": "Sözcükte anlam", "exam": "LGS" },
+        { "id": "paragraf", "label": "Paragraf", "exam": "LGS+YKS" },
+        { "id": "divan", "label": "Divan edebiyatı", "exam": "YKS" }
+      ]
+    }
+  ]
+}

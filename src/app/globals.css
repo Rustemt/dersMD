@@ -539,6 +539,232 @@
   }
 }
 
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 1.25rem;
+  border-bottom: 1px solid var(--border);
+  background: rgb(238 242 236 / 0.92);
+  backdrop-filter: blur(8px);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.site-nav-brand {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--board);
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.site-nav-links {
+  display: flex;
+  gap: 0.65rem;
+  overflow-x: auto;
+  scrollbar-width: thin;
+  padding-bottom: 0.15rem;
+}
+
+.site-nav-links a {
+  white-space: nowrap;
+  font-size: 0.82rem;
+  color: var(--muted-foreground);
+  text-decoration: none;
+}
+
+.site-nav-links a:hover {
+  color: var(--board);
+}
+
+.module-page .module-head {
+  margin-bottom: 1.5rem;
+}
+
+.tool-block {
+  display: grid;
+  gap: 1rem;
+}
+
+.tool-title {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: 1.35rem;
+  margin: 0;
+}
+
+.flash-card {
+  min-height: 180px;
+  display: grid;
+  place-content: center;
+  gap: 0.75rem;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  border: 1px solid var(--border);
+  background: rgb(255 255 255 / 0.7);
+  font-size: 1.4rem;
+  font-family: var(--font-display), Georgia, serif;
+  cursor: pointer;
+  text-align: center;
+}
+
+.flash-card span {
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-size: 0.85rem;
+  color: var(--muted-foreground);
+}
+
+.timer-face {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: clamp(3rem, 12vw, 5rem);
+  margin: 0;
+  letter-spacing: 0.04em;
+  color: var(--board);
+}
+
+.timer-face.small {
+  font-size: clamp(2rem, 8vw, 3rem);
+}
+
+.stats-line,
+.empty-note {
+  color: var(--muted-foreground);
+  line-height: 1.5;
+}
+
+.field {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.field span {
+  font-size: 0.85rem;
+  color: var(--muted-foreground);
+}
+
+.field input,
+.field textarea,
+.rubrik-row input {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 0.65rem;
+  padding: 0.65rem 0.8rem;
+  background: rgb(255 255 255 / 0.75);
+  font: inherit;
+  color: inherit;
+}
+
+.field textarea.codey {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.85rem;
+}
+
+.form-stack,
+.split-tools {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.split-tools {
+  grid-template-columns: 1fr 1fr;
+}
+
+.check-list,
+.student-list,
+.rubrik-list,
+.error-list,
+.topic-tree {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.55rem;
+}
+
+.check-list label {
+  display: flex;
+  gap: 0.6rem;
+  align-items: flex-start;
+  line-height: 1.4;
+}
+
+.rubrik-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+  padding: 0.55rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.rubrik-row input {
+  width: 5rem;
+}
+
+.rubrik-row em {
+  font-style: normal;
+  color: var(--muted-foreground);
+  font-size: 0.85rem;
+}
+
+.topic-tree > li {
+  margin-bottom: 0.75rem;
+}
+
+.topic-tree ul {
+  list-style: none;
+  margin: 0.4rem 0 0 1rem;
+  padding: 0;
+  display: grid;
+  gap: 0.35rem;
+  border-left: 2px solid var(--border);
+  padding-left: 0.85rem;
+}
+
+.topic-node {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: baseline;
+}
+
+.topic-node span {
+  color: var(--leaf);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.topic-node.child strong {
+  font-weight: 500;
+}
+
+.defter-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.md-preview {
+  border: 1px solid var(--border);
+  border-radius: 0.85rem;
+  padding: 1rem;
+  background: rgb(255 255 255 / 0.65);
+  line-height: 1.55;
+}
+
+.md-preview h1,
+.md-preview h2,
+.md-preview h3 {
+  margin-top: 0.6rem;
+}
+
+.error-list li {
+  color: #913228;
+}
+
 @media (max-width: 720px) {
   .hero-overlay {
     width: min(58vw, 220px);
@@ -558,5 +784,23 @@
   .courses-section,
   .how-section {
     padding-top: 3rem;
+  }
+
+  .split-tools,
+  .defter-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media print {
+  .site-nav,
+  .back-link,
+  .no-print,
+  .hero-cta {
+    display: none !important;
+  }
+
+  body {
+    background: white;
   }
 }

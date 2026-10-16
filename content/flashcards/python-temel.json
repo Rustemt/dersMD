@@ -1,0 +1,11 @@
+{
+  "id": "python-temel",
+  "title": "Python temel kartlar",
+  "cards": [
+    { "id": "c1", "front": "Değişken atama operatörü?", "back": "=" },
+    { "id": "c2", "front": "Karşılaştırma operatörü?", "back": "==" },
+    { "id": "c3", "front": "type(3.0) ne döner?", "back": "float" },
+    { "id": "c4", "front": "Metin tipi adı?", "back": "str" },
+    { "id": "c5", "front": "True/False tipi?", "back": "bool" }
+  ]
+}

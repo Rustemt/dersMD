@@ -1,0 +1,28 @@
+{
+  "id": "matematik-oran",
+  "title": "Oran–orantı (LGS)",
+  "topic": "Matematik",
+  "questions": [
+    {
+      "id": "q1",
+      "prompt": "2/5 ile 4/x orantılıysa x kaçtır?",
+      "choices": ["8", "10", "6", "12"],
+      "answerIndex": 1,
+      "explain": "2/5 = 4/x → 2x = 20 → x = 10"
+    },
+    {
+      "id": "q2",
+      "prompt": "3 işçi 12 günde bitiriyor. 6 işçi kaç günde bitirir? (ters orantı)",
+      "choices": ["24", "6", "8", "4"],
+      "answerIndex": 1,
+      "explain": "İşçi ×2 olunca süre yarıya iner: 6 gün."
+    },
+    {
+      "id": "q3",
+      "prompt": "A/B = 2/3 ve A+B = 25 ise A kaçtır?",
+      "choices": ["10", "12", "15", "8"],
+      "answerIndex": 0,
+      "explain": "2k+3k=25 → 5k=25 → k=5 → A=10"
+    }
+  ]
+}

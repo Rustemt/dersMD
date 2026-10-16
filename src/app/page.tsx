@@ -1,11 +1,13 @@
 import Link from "next/link";
 import { getCourses } from "@/lib/courses";
+import { EDU_MODULES } from "@/lib/modules";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 export default function HomePage() {
   const courses = getCourses();
   const first = courses[0];
+  const tools = EDU_MODULES.filter((m) => m.id !== "kurslar");
 
   return (
     <main>
@@ -13,35 +15,56 @@ export default function HomePage() {
         <div className="hero-overlay" aria-hidden />
         <div className="hero-inner">
           <p className="brand">DersMD</p>
-          <h1>Markdown ile ders yaz, öğrenci tarayıcıda pratik yapsın.</h1>
+          <h1>Açık kaynak eğitim araç seti: ders, quiz, tekrar, sınıf.</h1>
           <p className="hero-copy">
-            Açık kaynak eğitim formatı: JSON müfredat + etkileşimli quiz
-            player. Öğretmen içerik ekler, geliştirici player’ı genişletir.
+            On bir modül: müfredat player’dan canlı sınıf quiz’ine, rubrikten
+            LGS–YKS haritasına. İçerik JSON; kod MIT.
           </p>
           <div className="hero-cta">
             <Link
-              href={first ? `/kurs/${first.id}` : "#kurslar"}
+              href="#moduller"
               className={cn(buttonVariants({ size: "lg" }), "cta-primary")}
             >
-              Örnek kursa başla
+              Modülleri gör
             </Link>
             <Link
-              href="#kurslar"
+              href={first ? `/kurs/${first.id}` : "#kurslar"}
               className={cn(
                 buttonVariants({ variant: "outline", size: "lg" }),
                 "cta-ghost",
               )}
             >
-              Kursları gör
+              Örnek kurs
             </Link>
           </div>
         </div>
       </section>
 
-      <section id="kurslar" className="section courses-section">
+      <section id="moduller" className="section courses-section">
+        <header className="section-head">
+          <h2>Modüller</h2>
+          <p>Hepsi aynı repoda; istediğini fork’la veya PR ile genişlet.</p>
+        </header>
+        <ul className="course-list">
+          {tools.map((m) => (
+            <li key={m.id}>
+              <Link href={m.href} className="course-row">
+                <div>
+                  <p className="course-meta">{m.audience}</p>
+                  <h3>{m.title}</h3>
+                  <p>{m.blurb}</p>
+                </div>
+                <span className="course-go">Aç</span>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section id="kurslar" className="section">
         <header className="section-head">
           <h2>Hazır kurslar</h2>
-          <p>İçerik `content/courses` altında; sen de kendi dersini ekleyebilirsin.</p>
+          <p>İçerik `content/courses` altında.</p>
         </header>
         <ul className="course-list">
           {courses.map((course) => (
@@ -63,27 +86,21 @@ export default function HomePage() {
 
       <section className="section how-section">
         <header className="section-head">
-          <h2>Nasıl katkı verirsin?</h2>
-          <p>Claude for Open Source için de işe yarayan yol: kullanılan, bakılan bir araç bırak.</p>
+          <h2>Açık kaynak</h2>
+          <p>MIT lisans. Kurs, kart, soru ve konu JSON’ları PR ile gelir.</p>
         </header>
         <ol className="how-list">
           <li>
-            <strong>Kurs ekle</strong>
-            <span>
-              `content/courses/*.json` dosyası oluştur: ders metni + quiz.
-            </span>
+            <strong>İçerik ekle</strong>
+            <span>`content/` altındaki JSON dosyalarını çoğalt.</span>
           </li>
           <li>
-            <strong>Player’ı geliştir</strong>
-            <span>
-              Markdown parser, spaced repetition veya öğretmen paneli ekle.
-            </span>
+            <strong>Modül geliştir</strong>
+            <span>`src/app/` içinde yeni rota veya mevcut aracı iyileştir.</span>
           </li>
           <li>
-            <strong>Başkasına kullandır</strong>
-            <span>
-              Okul / bootcamp / dershaneye göster; issue ve PR kabul et.
-            </span>
+            <strong>GitHub’a koy</strong>
+            <span>Repo oluştur, push et, README’deki kurulum adımlarını izle.</span>
           </li>
         </ol>
       </section>

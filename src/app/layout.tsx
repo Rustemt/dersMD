@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Fraunces, Manrope } from "next/font/google";
+import { SiteNav } from "@/components/site-nav";
 import "./globals.css";
 
 const display = Fraunces({
@@ -13,9 +14,9 @@ const sans = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: "DersMD — Açık kaynak eğitim player",
+  title: "DersMD — Açık kaynak eğitim araç seti",
   description:
-    "Markdown/JSON müfredat ile etkileşimli ders ve quiz. Öğretmen içerik yazar, öğrenci pratik yapar.",
+    "Ders player, tekrar motoru, soru bankası, pomodoro, dikte, sınıf quiz, ödev, rubrik, konu haritası, markdown defter ve ders paketi doğrulayıcı.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -24,7 +25,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="tr"
       className={`${display.variable} ${sans.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <SiteNav />
+        {children}
+      </body>
     </html>
   );
 }

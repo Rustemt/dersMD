@@ -1,38 +1,52 @@
 # DersMD
 
-Açık kaynak **eğitim player**: JSON müfredat + etkileşimli ders/quiz. Öğretmen içerik yazar, öğrenci tarayıcıda pratik yapar.
+Açık kaynak **eğitim araç seti** (MIT). JSON içerik + Next.js arayüz.
 
-## Neden bu proje?
+## Modüller
 
-Claude for Open Source / genel OSS uygunluğu için “boş demo” değil, **başkalarının katkı verebileceği bir eğitim aracı** hedefler:
+| Modül | Rota | Ne işe yarar |
+| --- | --- | --- |
+| Ders player | `/kurs/...` | JSON müfredat + quiz |
+| Tekrar motoru | `/tekrar` | Flashcard + SM-2 lite |
+| Soru bankası | `/soru-bankasi` | Yanlışları tekrar kuyruğu |
+| Pomodoro + hedef | `/pomodoro` | Zamanlayıcı, hedef, streak |
+| Sesli okuma / dikte | `/dikte` | Dinle–yaz (Web Speech) |
+| Sınıf quiz | `/sinif-quiz` | Oda kodu ile canlı quiz |
+| Ödev toplayıcı | `/odev` | Teslim + kontrol listesi |
+| Rubrik puanlayıcı | `/rubrik` | Kriter notu + yazdır |
+| LGS–YKS haritası | `/konu-haritasi` | Konu ağacı |
+| Markdown defter | `/defter` | MD → HTML önizleme |
+| Açık ders paketi | `/paket` | `ders.json` doğrulayıcı |
 
-- Kurslar `content/courses/*.json` — içerik PR’ı kolay
-- Player Next.js ile genişletilebilir (Markdown, spaced repetition, öğretmen paneli)
-- Örnek müfredat: Python başlangıç + İngilizce A1
-
-## Çalıştırma
+## Kurulum
 
 ```bash
 npm install
-npm run dev -- --port 43127
+npm run dev
 ```
 
-Tarayıcı: [http://127.0.0.1:43127](http://127.0.0.1:43127)
+Varsayılan adres: [http://127.0.0.1:43127](http://127.0.0.1:43127)
 
-## Yeni kurs eklemek
+## İçerik ekleme
 
-1. `content/courses/benim-kursum.json` oluştur  
-2. Şema: `id`, `title`, `level`, `minutes`, `summary`, `audience`, `lessons[]`  
-3. Her derste `body` (paragraflar) + `quiz` (`prompt`, `choices`, `answerIndex`, `explain`)  
-4. `src/lib/courses.ts` içine import et
+- Kurslar: `content/courses/*.json` → `src/lib/courses.ts` import
+- Kartlar: `content/flashcards/`
+- Sorular: `content/questions/`
+- Konu haritası: `content/topics/`
+- Şema: `content/SCHEMA.md`
 
-## OSS yol haritası (uygunluk için)
+## GitHub’a yükleme
 
-1. Gerçek öğretmen/öğrenciye kullandır  
-2. Issue aç / PR kabul et  
-3. İsteğe bağlı: `@dersmd/schema` npm paketi ayır  
-4. Aktif bakımı 3+ ay sürdür, sonra Claude for OSS’e başvur
+1. GitHub’da yeni boş repo oluştur (README ekleme).
+2. Yerelde:
+
+```bash
+git remote add github https://github.com/KULLANICI/REPO.git
+git push -u github main
+```
+
+Cursor’da **Create repo** ile de bağlayabilirsin; ardından aynı `main` dalını GitHub’a push et.
 
 ## Lisans
 
-MIT
+MIT — ayrıntı `LICENSE`.
