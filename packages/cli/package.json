@@ -1,25 +1,33 @@
 {
   "name": "@dersmd/cli",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "DersMD CLI — ders.json doğrula",
   "license": "MIT",
   "type": "module",
   "bin": {
     "dersmd": "./dist/cli.js"
   },
-  "files": ["dist", "README.md"],
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "prepublishOnly": "npm run build"
   },
   "dependencies": {
-    "@dersmd/schema": "0.1.0"
+    "@dersmd/schema": "0.1.1"
   },
   "devDependencies": {
     "@types/node": "^20",
     "typescript": "^5"
   },
-  "keywords": ["dersmd", "education", "cli", "validate"],
+  "keywords": [
+    "dersmd",
+    "education",
+    "cli",
+    "validate"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/Rustemt/dersMD.git",

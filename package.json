@@ -20,8 +20,8 @@
   },
   "dependencies": {
     "@base-ui/react": "^1.9.0",
-    "@dersmd/schema": "0.1.0",
-    "@dersmd/sm2": "0.1.0",
+    "@dersmd/schema": "0.1.1",
+    "@dersmd/sm2": "0.1.1",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^1.58.0",
