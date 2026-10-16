@@ -766,6 +766,37 @@
   color: #913228;
 }
 
+.code-preview {
+  margin: 0;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  border: 1px solid var(--border);
+  background: rgb(18 38 31 / 0.92);
+  color: #e8f2ec;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.8rem;
+  overflow: auto;
+  max-height: 420px;
+  white-space: pre-wrap;
+}
+
+.file-btn {
+  display: inline-flex;
+  align-items: center;
+  height: 2.25rem;
+  padding: 0 0.9rem;
+  border-radius: 0.65rem;
+  border: 1px solid var(--border);
+  background: rgb(255 255 255 / 0.7);
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.file-btn:hover {
+  border-color: var(--leaf);
+}
+
 @media (max-width: 720px) {
   .hero-overlay {
     width: min(58vw, 220px);

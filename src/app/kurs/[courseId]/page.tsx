@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getCourse, getCourses } from "@/lib/courses";
 import { CourseProgress } from "@/components/course-progress";
+import { CourseExportButton } from "@/components/course-export-button";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -37,14 +38,17 @@ export default async function CoursePage({ params }: PageProps) {
           courseId={course.id}
           totalLessons={course.lessons.length}
         />
-        {firstLesson ? (
-          <Link
-            href={`/kurs/${course.id}/${firstLesson.id}`}
-            className={cn(buttonVariants({ size: "lg" }), "mt-6 inline-flex")}
-          >
-            İlk derse başla
-          </Link>
-        ) : null}
+        <div className="quiz-actions mt-6">
+          {firstLesson ? (
+            <Link
+              href={`/kurs/${course.id}/${firstLesson.id}`}
+              className={cn(buttonVariants({ size: "lg" }), "inline-flex")}
+            >
+              İlk derse başla
+            </Link>
+          ) : null}
+          <CourseExportButton course={course} />
+        </div>
       </header>
 
       <section className="section-tight">

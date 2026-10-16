@@ -84,4 +84,11 @@ export const EDU_MODULES: EduModule[] = [
     blurb: "ders.json şeması + tarayıcıda doğrulama.",
     audience: "Geliştirici",
   },
+  {
+    id: "ilerleme",
+    href: "/ilerleme",
+    title: "İlerleme yedekle",
+    blurb: "localStorage ilerlemesini JSON dışa/içe aktar.",
+    audience: "Öğrenci",
+  },
 ];
